@@ -1,5 +1,13 @@
 const sum = require('./sum');
 
+const shoopingList = [
+    'diapers',
+    'kleenex',
+    'trash bags',
+    'paper towels',
+    'milk'
+];
+
 test('add 1 + 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3)
 });
@@ -59,3 +67,12 @@ test('adding floating to point numbers', () => {
 test('there is no I in the Team', () => {
     expect('Team').not.toMatch(/I/);
 })
+
+test('but there is a "Stop" in Christoph', () => {
+    expect('Christoph').not.toMatch(/Stop/);
+})
+
+test('the shooping list has milk on it', () => {
+    expect(shoopingList).toContain('milk');
+    expect(new Set(shoopingList)).toContain('milk');
+});
